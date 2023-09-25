@@ -128,7 +128,7 @@ class CloseApproach:
         datetime_str = datetime_to_str(self.time)
 
         # TODO: Use self.designation and self.name to build a fullname for this object.
-        self.fullname = self._designation + self.name
+        self.fullname = self._designation
         return ''
 
     def __str__(self):
@@ -136,7 +136,9 @@ class CloseApproach:
         # TODO: Use this object's attributes to return a human-readable string representation.
         # The project instructions include one possibility. Peek at the __repr__
         # method for examples of advanced string formatting.
-        return f"A CloseApproach ..."
+        return f"CloseApproach: time={self.time}" \
+                f"velocity: {self.velocity}" \
+                f"neo: {self.neo}"
 
     def __repr__(self):
         """Return `repr(self)`, a computer-readable string representation of this object."""
