@@ -17,15 +17,26 @@ import json
 
 from models import NearEarthObject, CloseApproach
 
+# neo_csv_path = './data/neos.csv'
 
-def load_neos(neo_csv_path):
+def load_neos():
+    neo_csv_path = './data/neos.csv'
     """Read near-Earth object information from a CSV file.
 
     :param neo_csv_path: A path to a CSV file containing data about near-Earth objects.
     :return: A collection of `NearEarthObject`s.
     """
+
     # TODO: Load NEO data from the given CSV file.
-    return ()
+    obj_arr = []
+    with open(neo_csv_path, 'r') as neo_file:
+        reader = csv.DictReader(neo_file)
+        for data in reader:
+            # print(data)
+            # print('count of data', len(data))
+            obj = NearEarthObject(**data)
+            obj_arr.append(obj)
+    return obj_arr
 
 
 def load_approaches(cad_json_path):
