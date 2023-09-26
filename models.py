@@ -47,7 +47,7 @@ class NearEarthObject:
         self.designation = info['pdes']
         self.name = info['name'] if info['name'] != '' else None
         self.diameter = float(info['diameter']) if info['diameter'] != '' else float('nan')
-        self.hazardous = info['pha']
+        self.hazardous = True if info['pha'] == 'Y' else False
 
         # Create an empty initial collection of linked approaches.
         self.approaches = []

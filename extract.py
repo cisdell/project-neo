@@ -39,7 +39,7 @@ def load_neos(neo_csv_path):
             obj_arr.append(obj)
     return obj_arr
 
-
+neos = load_neos(neo_csv_path)
 def load_approaches(cad_json_path):
     """Read close approach data from a JSON file.
     :param cad_json_path: A path to a JSON file containing data about close approaches.
@@ -51,13 +51,14 @@ def load_approaches(cad_json_path):
     res = []
     cad_data = (data['data'])
     cad_keys = data['fields']
-    for line in cad_data[:10]:
+    for line in cad_data:
         cad_data = dict(zip(cad_keys,line))
         cad = CloseApproach(**cad_data)
         res.append(cad)
-        print(cad)
+        # print(cad)
     return res
 
+approaches = load_approaches(cad_json_path)
 """
 def __init__(self, **info):
 class CloseApproach:
