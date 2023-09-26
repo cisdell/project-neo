@@ -48,6 +48,26 @@ def load_approaches(cad_json_path):
     # TODO: Load close approach data from the given JSON file.
     f = open(cad_json_path)
     data = json.load(f)
+    res = []
+    cad_data = (data['data'])
+    cad_keys = data['fields']
+    for line in cad_data[:10]:
+        cad_data = dict(zip(cad_keys,line))
+        cad = CloseApproach(**cad_data)
+        res.append(cad)
+        print(cad)
+    return res
 
+"""
+def __init__(self, **info):
+class CloseApproach:
+        self._designation = info['des']
+        self.time = cd_to_datetime(info['cd'])
+        # TODO: Use the cd_to_datetime function for this attribute.
+        self.distance = float(info['dist'])
+        self.velocity = float(info['v_rel'])
+        self.fullname = ''
 
-    return ()
+        # Create an attribute for the referenced NEO, originally None.
+        self.neo = None
+"""
