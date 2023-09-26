@@ -52,6 +52,11 @@ class NEODatabase:
         # TODO: What additional auxiliary data structures will be useful?
 
         # TODO: Link together the NEOs and their close approaches.
+        for cad in self._approaches:
+            tempNeo = self.neo_by_designation.get(cad._designation, None)
+            tempNeo.approaches.append(cad)
+            cad.neo = tempNeo
+
 
 
     def get_neo_by_designation(self, designation):
@@ -114,5 +119,6 @@ class NEODatabase:
         :return: A stream of matching `CloseApproach` objects.
         """
         # TODO: Generate `CloseApproach` objects that match all of the filters.
+
         for approach in self._approaches:
             yield approach
