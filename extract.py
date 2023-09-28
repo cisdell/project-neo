@@ -38,8 +38,8 @@ def load_neos(neo_csv_path):
             obj = NearEarthObject(**data)
             obj_arr.append(obj)
     return obj_arr
-
-neos = load_neos(neo_csv_path)
+# neos = load_neos(neo_csv_path)
+#for testing purposes only
 def load_approaches(cad_json_path):
     """Read close approach data from a JSON file.
     :param cad_json_path: A path to a JSON file containing data about close approaches.
@@ -58,7 +58,8 @@ def load_approaches(cad_json_path):
         # print(cad)
     return res
 
-approaches = load_approaches(cad_json_path)
+# approaches = load_approaches(cad_json_path)
+#for testing purposes only
 """
 def __init__(self, **info):
 class CloseApproach:
