@@ -55,7 +55,11 @@ class AttributeFilter:
 
     def __call__(self, approach):
         """Invoke `self(approach)`."""
-        return self.op(self.get(approach), self.value)
+        try:
+            return self.op(self.get(approach), self.value)
+        except Exception as e:
+            print(approach, self.value)
+            # print(e)
 
     @classmethod
     def get(cls, approach):
