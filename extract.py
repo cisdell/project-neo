@@ -60,16 +60,3 @@ def load_approaches(cad_json_path):
 
 # approaches = load_approaches(cad_json_path)
 #for testing purposes only
-"""
-def __init__(self, **info):
-class CloseApproach:
-        self._designation = info['des']
-        self.time = cd_to_datetime(info['cd'])
-        # TODO: Use the cd_to_datetime function for this attribute.
-        self.distance = float(info['dist'])
-        self.velocity = float(info['v_rel'])
-        self.fullname = ''
-
-        # Create an attribute for the referenced NEO, originally None.
-        self.neo = None
-"""
