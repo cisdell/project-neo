@@ -199,7 +199,7 @@ def limit(iterator, n=None):
     """
 
     # TODO: Produce at most `n` values from the given iterator.
-    if n != None or n != 0:
+    if n:
         iterator = islice(iterator, n)
 
     return iterator
