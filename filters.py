@@ -59,8 +59,8 @@ class AttributeFilter:
         try:
             return self.op(self.get(approach), self.value)
         except Exception as e:
-            print(approach, self.value)
-            # print(e)
+            # print(approach, self.value)
+            print(e)
 
     @classmethod
     def get(cls, approach):
@@ -171,6 +171,8 @@ def create_filters(
         filters.append(DateFilter(operator.le, end_date))
     if distance_max:
         filters.append(DistanceFilter(operator.le, distance_max))
+    if distance_min:
+        filters.append(DistanceFilter(operator.ge, distance_min))
     if velocity_min:
         filters.append(VelocityFilter(operator.ge, velocity_min))
     if velocity_max:
@@ -179,7 +181,7 @@ def create_filters(
         filters.append(NEODiameterFilter(operator.ge, diameter_min))
     if diameter_max:
         filters.append(NEODiameterFilter(operator.le, diameter_max))
-    if hazardous:
+    if hazardous != None:
         filters.append(NEOHazardousFilter(operator.eq, hazardous))
 
     return tuple(filters)

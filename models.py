@@ -136,7 +136,7 @@ class CloseApproach:
 
         # TODO: Use self.designation and self.name to build a fullname for this object.
         self.fullname = self._designation
-        return ""
+        return datetime_str
 
     def __str__(self):
         """Return `str(self)`."""
